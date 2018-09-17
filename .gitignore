@@ -1,0 +1,6 @@
+# Package Files #
+*.jar
+
+# Swagger code-gen
+.swagger-codegen/
+index.html

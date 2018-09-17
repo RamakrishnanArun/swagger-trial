@@ -3,4 +3,4 @@
 
 # Swagger code-gen
 .swagger-codegen/
-index.html
+/index.html

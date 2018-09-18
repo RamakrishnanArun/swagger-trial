@@ -2,4 +2,13 @@ script:
 - wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.3.1/swagger-codegen-cli-2.3.1.jar -O swagger-codegen-cli.jar
 - java -jar swagger-codegen-cli.jar generate -l html2 -i swagger.yaml -o docs/api-spec
 - ./scripts/updateSiteConfig.sh
-- ./scripts/silentCommitChanges.sh
+#- ./scripts/silentCommitChanges.sh
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  local-dir: docs
+  on:
+    branch: master
